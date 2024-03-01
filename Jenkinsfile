@@ -69,14 +69,11 @@ pipeline {
         stage('Check Branch') {
             steps {
                 script {
-                    def branchName = env.BRANCH_NAME
-                    if (branchName == 'master') {
-                        echo 'Running script for master branch'
-                        // Run script for master branch
-                    } else if (branchName == 'main') {
-                        echo 'Running script for main branch'
-                        // Run script for main branch
-                    }
+                     env.BRANCH_NAME
+                    
+                sh '''
+                echo env.BRANCH_NAME
+                '''
                 }
             }
         }
