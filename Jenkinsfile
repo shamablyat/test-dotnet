@@ -1,19 +1,15 @@
 pipeline {
     agent any
-
+    when{
+        branch : "master"
+    }
     stages {
         stage('Build') {
-            when {
-                branch 'master'
-            }
             steps {
                 echo "Building..."
             }
         }
         stage('Deliver') {
-            when {
-                branch 'main'
-            }
             steps {
                 echo 'Deliver....'
 
@@ -24,27 +20,23 @@ pipeline {
 
 pipeline {
     agent any
+    when{
+        branch : "main"
+    }
     stages {
-        stage('Build') {
-            when {
-                environment name: 'BUILD_ENV', value: 'main' // Execute this stage only if BUILD_ENV is set to 'dev'
-            }
+        stage('Build1') {
             steps {
-                echo "hellooooooo from main"
+                echo "Building1..."
             }
         }
-        stage('Test') {
-            when {
-                environment name: 'BUILD_ENV', value: 'master' // Execute this stage only if BUILD_ENV is set to 'dev'
-            }
+        stage('Deliver1') {
             steps {
-                echo "hellooooooo from master"
+                echo 'Deliver1....'
+
             }
         }
     }
 }
-
-
 
 
 
