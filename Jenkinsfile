@@ -61,21 +61,37 @@
 
 
 
-
 pipeline {
     agent any
-    
+
     stages {
-        stage('Check Branch') {
+        stage('Build') {
+            steps {
+                // Your build steps here
+                echo 'Building...'
+            }
+        }
+        stage('Test') {
+            steps {
+                // Your test steps here
+                echo 'Testing...'
+            }
+        }
+    }
+
+    post {
+        success {
+            // Execute this block of code only when code is pushed to the 'master' branch
+            when {
+                branch 'master'
+            }
             steps {
                 script {
-                
-                    
-                
-                    echo env.BRANCH_NAME
-                
+                    // Run specific script for 'master' branch
+                    echo "hello from master"
                 }
             }
         }
     }
 }
+
