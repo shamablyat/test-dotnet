@@ -42,7 +42,7 @@ pipeline {
                 '''
             }
         }
-    }
+    
         stage('Deliver') {
             when {
                 branch 'main'
@@ -54,4 +54,5 @@ pipeline {
                 '''
             }
         }
+    }
 }
