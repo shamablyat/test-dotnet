@@ -76,8 +76,6 @@ pipeline {
                     } else if (branchName == 'main') {
                         echo 'Running script for main branch'
                         // Run script for main branch
-                    } else {
-                        error "Unsupported branch: ${branchName}"
                     }
                 }
             }
