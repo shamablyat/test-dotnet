@@ -32,26 +32,26 @@ pipeline {
 
     stages {
         stage('Build') {
-            when {
-                branch 'master'
-            }
             steps {
-                echo "Building..."
-                sh '''
-                echo "hello from master "
-                '''
+                script {
+                    if(env.BRANCH_NAME == 'master') {
+                        sh '''
+                        echo "hello from master"
+                        '''
+                    }
+                }
             }
         }
     
-        stage('Deliver') {
-            when {
-                branch 'main'
-            }
+        stage('deviler') {
             steps {
-                echo 'Deliver....'
-                sh '''
-                echo "hello from main"
-                '''
+                script {
+                    if(env.BRANCH_NAME == 'main') {
+                        sh '''
+                        echo "hello from main"
+                        '''
+                    }
+                }
             }
         }
     }
