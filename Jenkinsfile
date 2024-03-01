@@ -69,11 +69,11 @@ pipeline {
         stage('Check Branch') {
             steps {
                 script {
-                     env.BRANCH_NAME
+                
                     
-                sh '''
-                echo env.BRANCH_NAME
-                '''
+                
+                    echo env.BRANCH_NAME
+                
                 }
             }
         }
