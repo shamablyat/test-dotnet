@@ -43,15 +43,15 @@ pipeline {
             }
         }
     }
-    stage('Deliver') {
-        when {
-            branch 'main'
+        stage('Deliver') {
+            when {
+                branch 'main'
+            }
+            steps {
+                echo 'Deliver....'
+                sh '''
+                echo "hello from main"
+                '''
+            }
         }
-        steps {
-            echo 'Deliver....'
-            sh '''
-            echo "hello from main"
-            '''
-        }
-    }
 }
