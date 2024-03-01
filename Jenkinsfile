@@ -3,9 +3,9 @@ pipeline {
     stages {
         stage('Build') {
             when {
-                not {
-                    branch "main"
-                }
+            
+                branch "main"
+        
             }
             steps {
                 echo "Building..."
@@ -13,9 +13,8 @@ pipeline {
         }
         stage('Deliver') {
             when {
-                not {
-                    branch "master"
-                }
+                branch "master"
+                
             }
             steps {
                 echo 'Deliver.....'
