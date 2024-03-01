@@ -30,3 +30,4 @@
 /Users/shama/Desktop/TodoApi/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Relational.dll
 /Users/shama/Desktop/TodoApi/obj/Debug/net8.0/TodoApi.csproj.AssemblyReference.cache
 /Users/shama/Desktop/TodoApi/obj/Debug/net8.0/TodoApi.csproj.Up2Date
+/Users/shama/Desktop/TodoApi/obj/Debug/net8.0/TodoApi.sourcelink.json
