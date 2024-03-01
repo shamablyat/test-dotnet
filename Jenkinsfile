@@ -5,6 +5,11 @@ pipeline {
 
         stages {
             stage('Build') {
+                when {
+                    not {
+                        branch "master"
+                    }
+                }
                 steps {
                     echo "Building..."
                 }
@@ -19,26 +24,7 @@ pipeline {
     }
 }
 
-pipeline {
-    agent any
-    when{
-        branch : "main"
-        
-        stages {
-            stage('Build1') {
-                steps {
-                    echo "Building1..."
-                }
-            }
-            stage('Deliver1') {
-                steps {
-                    echo 'Deliver1....'
 
-                }
-            }
-        }
-    }
-}
 
 
 
