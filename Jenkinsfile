@@ -12,6 +12,11 @@ pipeline {
             }
         }
         stage('Deliver') {
+            when {
+                not {
+                    branch "master"
+                }
+            }
             steps {
                 echo 'Deliver.....'
 
