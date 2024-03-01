@@ -38,7 +38,7 @@ pipeline {
             steps {
                 echo "Building..."
                 sh '''
-                echo "hello from master"
+                echo "hello from master "
                 '''
             }
         }
