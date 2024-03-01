@@ -1,23 +1,12 @@
 pipeline {
     agent any
-    
-    triggers {
-        pollSCM '* * * * *'
-    }
+
     stages {
         stage('Build') {
             steps {
-                echo "Building.."
+                echo "Building...."
                 sh '''
-                echo "build"
-                '''
-            }
-        }
-        stage('Test') {
-            steps {
-                echo "Testing.."
-                sh '''
-                echo "test"
+                docker build -t tajbaevsh/dotnet .
                 '''
             }
         }
@@ -25,7 +14,7 @@ pipeline {
             steps {
                 echo 'Deliver....'
                 sh '''
-                echo "doing delivery stuff.."
+                docker push tajbaevsh/dotnet:latest
                 '''
             }
         }
