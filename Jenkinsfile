@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                echo 'Deliver....'
+                echo 'Deliver...'
                 sh '''
                 docker push tajbaevsh/dotnet:latest
                 '''
