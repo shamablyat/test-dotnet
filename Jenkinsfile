@@ -8,9 +8,6 @@ pipeline {
             }
             steps {
                 echo "Building..."
-                sh '''
-                echo "hello world from master"
-                '''
             }
         }
         stage('Deliver') {
@@ -19,14 +16,33 @@ pipeline {
             }
             steps {
                 echo 'Deliver....'
-                sh '''
-                echo "hello world from main"
-                '''
+
             }
         }
     }
 }
 
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            when {
+                environment name: 'BUILD_ENV', value: 'main' // Execute this stage only if BUILD_ENV is set to 'dev'
+            }
+            steps {
+                echo "hellooooooo from main"
+            }
+        }
+        stage('Test') {
+            when {
+                environment name: 'BUILD_ENV', value: 'master' // Execute this stage only if BUILD_ENV is set to 'dev'
+            }
+            steps {
+                echo "hellooooooo from master"
+            }
+        }
+    }
+}
 
 
 
