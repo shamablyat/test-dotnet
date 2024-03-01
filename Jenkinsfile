@@ -59,21 +59,17 @@
 
 
 
-
-
 pipeline {
     agent any
 
     stages {
         stage('Build') {
             steps {
-                // Your build steps here
                 echo 'Building...'
             }
         }
         stage('Test') {
             steps {
-                // Your test steps here
                 echo 'Testing...'
             }
         }
@@ -81,14 +77,9 @@ pipeline {
 
     post {
         success {
-            // Execute this block of code only when code is pushed to the 'master' branch
-            when {
-                branch 'master'
-            }
-            steps {
-                script {
-                    // Run specific script for 'master' branch
-                    echo "hello from master"
+            script {
+                if (env.BRANCH_NAME == 'master') {
+                    sh './script-for-master-branch.sh'
                 }
             }
         }
