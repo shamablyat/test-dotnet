@@ -11,6 +11,7 @@ pipeline {
                 echo "Building...."
             }
         }
+        
         stage('Deliver') {
             when {
                 not {
