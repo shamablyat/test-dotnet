@@ -15,6 +15,7 @@ pipeline {
             }
             steps {
                 sh '''
+                rm -rf test-dotnet
                 git clone https://github.com/shamablyat/test-dotnet/
                 cd test-dotnet 
                 ls
