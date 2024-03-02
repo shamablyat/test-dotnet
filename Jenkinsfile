@@ -8,16 +8,19 @@ pipeline {
             steps {
                 echo "master"
             }
-
         }
         stage('main') {
             when {
                 branch "main"
             }
             steps {
-                echo "main."
+                sh '''
+                git clone https://github.com/shamablyat/test-dotnet/
+                cd test dotnet 
+                ls
+                pwd
+                '''
             }
         }
     }
-
 }
