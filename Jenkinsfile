@@ -1,13 +1,12 @@
 pipeline {
     agent any
     stages {
-        stage('master.') {
+        stage('master') {
             when {
                 branch "master"
             }
             steps {
                 sh '''
-                rm -rf test-dotnet
                 git clone https://github.com/shamablyat/test-dotnet/
                 cd test-dotnet 
                 ls
