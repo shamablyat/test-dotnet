@@ -8,7 +8,7 @@ pipeline {
             steps {
                 echo "master"
             }
-            
+
         }
         stage('main') {
             when {
