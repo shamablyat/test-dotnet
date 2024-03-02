@@ -1,29 +1,18 @@
 pipeline {
     agent any
     stages {
-        when {
-            branch "master"
-        }
-        stage('Build') {
+        
+        stage('Preparation') {
             steps {
-                echo "Building..."
+                checkout scm
             }
+            
         }
-
-        stage('Deliver') {
-            when {
-            branch "main"
-        }
+        stage('Who am i?') {
             steps {
-                echo 'Deliveer....'
-
+                echo "This job was triggered by a Git push to branch: ${env.BRANCH_NAME}"
             }
         }
     }
 
 }
-
-
-
-
-
