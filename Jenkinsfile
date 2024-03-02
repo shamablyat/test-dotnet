@@ -12,7 +12,7 @@ pipeline {
                 cd test-dotnet 
                 ls
                 pwd
-                sudo docker compose up --build -d
+                docker compose up --build -d
                 docker ps
                 '''
             }
