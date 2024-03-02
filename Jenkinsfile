@@ -15,7 +15,7 @@ pipeline {
                 branch "main"
             }
             steps {
-                echo "main"
+                echo "main."
             }
         }
     }
