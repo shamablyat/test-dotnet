@@ -3,7 +3,7 @@
 When you're ready, start your application by running:
 `docker compose up --build`.
 
-Your application will be available at http://localhost:8123.
+Your application will be available at http://localhost:8880.
 
 ### Deploying your application to the cloud
 
@@ -21,4 +21,4 @@ docs for more detail on building and pushing.
 ### References
 * [Docker's .NET guide](https://docs.docker.com/language/dotnet/)
 * The [dotnet-docker](https://github.com/dotnet/dotnet-docker/tree/main/samples)
-  repository has many relevant samples and docs..
+  repository has many relevant samples and docs.
