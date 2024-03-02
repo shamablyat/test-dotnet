@@ -1,6 +1,9 @@
 pipeline {
     agent any
     stages {
+        when {
+            branch "master"
+        }
         stage('Build') {
             steps {
                 echo "Building..."
@@ -8,6 +11,9 @@ pipeline {
         }
 
         stage('Deliver') {
+            when {
+            branch "main"
+        }
             steps {
                 echo 'Deliveer....'
 
